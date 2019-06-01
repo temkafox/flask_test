@@ -7,8 +7,8 @@ db = pymysql.connect("localhost", "root1", "", "langs")
 @app.route('/')
 def data():
 	cursor = db.cursor()
-	sql = 'SELECT * FROM lang'
-	cursor.execute(sql)
+	sql_lang = 'SELECT * FROM lang'
+	cursor.execute(sql_lang)
 	results = cursor.fetchall()
 	print(results)
 	return render_template('index.html', db=results)

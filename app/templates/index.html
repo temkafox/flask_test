@@ -5,5 +5,9 @@
 </head>
 <body>
 	<p>db: {{db[1]}}</p>
+	<select>
+		{% for item in db %}
+		<option>{{ item }}</option>
+	</select>
 </body>
 </html>
