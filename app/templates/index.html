@@ -2,9 +2,14 @@
 <html>
 <head>
 	<title>Flask Server</title>
+	<script src="http://code.jquery.com/jquery-3.4.1.js"></script>
 </head>
 <body>
+	<script>
+		
+	</script>
 	<select>
+		<option>Выберите язык</option>
 		{% for item in db %}
 		<option data-item-id="{{ item[0] }}">{{ item[1] }}</option>
 		{% endfor %}
