@@ -1,4 +1,5 @@
 from app import app
+from flask import jsonify
 from flask import render_template, request
 import pymysql
 
@@ -20,7 +21,7 @@ def req_items(url):
 	sql_fw = 'SELECT * FROM fw JOIN lang USING(id_lang)'
 	cursor.execute(sql_fw)
 	results = cursor.fetchall();
-	return results
+	return jsonify(results)
 #@app.route('/index')
 #def main():
 #	a=data()
