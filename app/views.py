@@ -11,7 +11,7 @@ def data():
 	cursor.execute(sql)
 	results = cursor.fetchall()
 	print(results)
-	return results
+	return render_template('index.html')
 @app.route('/index')
 def main():
 	a=data()
