@@ -16,7 +16,11 @@ def data():
 @app.route('/req_items/<url>', methods=['GET'])
 def req_items(url):
 	print(url)
-	return url
+	cursor = db.cursor()
+	sql_fw = 'SELECT * FROM fw JOIN lang USING(id_lang)'
+	cursor.execute(sql_fw)
+	results = cursor.fetchall();
+	return result
 #@app.route('/index')
 #def main():
 #	a=data()
