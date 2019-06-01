@@ -9,7 +9,7 @@
 		$(document).ready(function () {
 		    console.log('document ready');
 		    $('#selector').change(function () {
-		        a = $('#selector:selected').val();
+		        a = $('#selector option:selected').val();
 		        console.log(a);
 		    });
 		}); 
