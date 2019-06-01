@@ -16,6 +16,7 @@ def data():
 @app.route('/req_items', methods=['POST'])
 def req_items():
 	print(request.args.get)
+	return request.args.get
 #@app.route('/index')
 #def main():
 #	a=data()
