@@ -6,7 +6,7 @@ from flask import render_template
 @app.route('/')
 def data():
 	cursor = db.cursor()
-    sql = "SELECT * FROM lang"
+    sql = 'SELECT * FROM lang'
     cursor.execute(sql)
     results = cursor.fetchall()
 
