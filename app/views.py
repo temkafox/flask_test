@@ -1,6 +1,7 @@
 from app import app
 from flask import render_template
 
+db = pymysql.connect("localhost", "root1", "", "langs")
 
 @app.route('/')
 def data():
