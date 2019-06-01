@@ -21,10 +21,10 @@
 		});
 
 		function add_elements(res){
-			var newLi = document.createElement('li');
   			res.forEach(function(item){
-  				// list.appendChild(newLi);
-  				// newLi.innerHTML = item;
+  				var newLi = document.createElement('li');
+  				list.appendChild(newLi);
+  				newLi.innerHTML = item[1];
   				console.log(item[1]);
   			});
 		}
