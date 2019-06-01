@@ -18,7 +18,7 @@ def data():
 def req_items(url):
 	print(url)
 	cursor = db.cursor()
-	sql_fw = 'SELECT * FROM fw JOIN lang USING(id_lang)'
+	sql_fw = 'SELECT '+ url +' FROM fw JOIN lang USING(id_lang)'
 	cursor.execute(sql_fw)
 	results = cursor.fetchall();
 	return jsonify(results)
