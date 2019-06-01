@@ -12,5 +12,4 @@ def data():
 @app.route('/index')
 def main():
 	data()
-    return render_template('index.html')
-
+	return render_template('index.html')
