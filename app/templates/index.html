@@ -9,7 +9,7 @@
 		
 	</script>
 	<select>
-		<option>Выберите язык</option>
+		<option disabled selected value>Выберите язык</option>
 		{% for item in db %}
 		<option data-item-id="{{ item[0] }}">{{ item[1] }}</option>
 		{% endfor %}
