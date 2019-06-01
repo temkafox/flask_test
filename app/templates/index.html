@@ -11,6 +11,14 @@
 		    $('#selector').change(function () {
 		        a = $('#selector option:selected').data("item-id");
 		        console.log(a);
+		        $.ajax({
+		        	url: '/req_items',
+		        	data: a,
+		        	type: 'POST',
+		        	success: function(res) {
+		        		console.log(res)
+		        	}
+		        })
 		    });
 		}); 
 	</script>
