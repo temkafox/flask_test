@@ -10,6 +10,7 @@ def data():
 	sql = 'SELECT * FROM lang'
 	cursor.execute(sql)
 	results = cursor.fetchall()
+	return results
 @app.route('/index')
 def main():
 	data()
