@@ -22,9 +22,8 @@
 		});
 
 		function add_elements(res){
-			li = document.getElementsByTagName("li");
-			list = document.getElementById("list");
-			list.removeChild(li);
+			var newLi = document.createElement('li');
+  			newLi.innerHTML = res;
 		}
 	</script>
 	<select id="selector">
