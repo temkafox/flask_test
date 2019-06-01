@@ -6,8 +6,8 @@
 <body>
 	<p>db: {{db[1]}}</p>
 	<select>
-		{% for item in db.lang %}
-		<option>{{ item }}</option>
+		{% for item in db %}
+		<option>{{ item[1] }}</option>
 		{% endfor %}
 	</select>
 </body>
