@@ -10,7 +10,6 @@
 		    console.log('document ready');
 		    $('#selector').change(function () {
 		        a = $('#selector option:selected').data("item-id");
-		        console.log(a);
 		        $.ajax({
 		        	url: '/req_items/' + a,
 		        	type: 'GET',
@@ -28,7 +27,6 @@
   				// newLi.innerHTML = item;
   				console.log(item);
   			});
-  			console.log(res);
 		}
 	</script>
 	<select id="selector">
