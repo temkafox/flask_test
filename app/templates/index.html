@@ -6,9 +6,11 @@
 </head>
 <body>
 	<script>
-		
+		$(#selector).change(function){
+			$(#selector).hide();
+		});
 	</script>
-	<select>
+	<select id="selector">
 		<option disabled selected value>Выберите язык</option>
 		{% for item in db %}
 		<option data-item-id="{{ item[0] }}">{{ item[1] }}</option>
