@@ -6,11 +6,6 @@
 </head>
 <body>
 	<script>
-		function add_elements(res){
-			var li = getElementByTagName("li");
-			list.removeChild(li);
-		}
-
 		$(document).ready(function () {
 		    console.log('document ready');
 		    $('#selector').change(function () {
@@ -25,6 +20,11 @@
 		        })
 		    });
 		});
+
+		function add_elements(res){
+			var li = ul.getElementByTagName("li");
+			list.removeChild(li);
+		}
 	</script>
 	<select id="selector">
 		<option disabled selected value>Выберите язык</option>
