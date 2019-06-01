@@ -13,5 +13,5 @@ def data():
 	return results
 @app.route('/index')
 def main():
-	data()
+	a=data()
 	return render_template('index.html')
