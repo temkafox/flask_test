@@ -17,7 +17,7 @@ def data():
 def req_items():
 	a = request.args.get('id')
 	print(a)
-	return a
+	return 12
 #@app.route('/index')
 #def main():
 #	a=data()
