@@ -20,7 +20,7 @@ def req_items(url):
 	sql_fw = 'SELECT * FROM fw JOIN lang USING(id_lang)'
 	cursor.execute(sql_fw)
 	results = cursor.fetchall();
-	return result
+	return results
 #@app.route('/index')
 #def main():
 #	a=data()
