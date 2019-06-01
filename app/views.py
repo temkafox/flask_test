@@ -10,13 +10,13 @@ def data():
 	sql_lang = 'SELECT * FROM lang'
 	cursor.execute(sql_lang)
 	results = cursor.fetchall()
-	print(results)
+	#print(results)
 	return render_template('index.html', db=results)
 
 @app.route('/req_items', methods=['POST'])
 def items():
 	print(request)
-@app.route('/index')
-def main():
-	a=data()
-	return render_template('index.html')
+#@app.route('/index')
+#def main():
+#	a=data()
+#	return render_template('index.html')
