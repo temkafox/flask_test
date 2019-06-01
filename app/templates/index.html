@@ -13,7 +13,7 @@
 		        console.log(a);
 		        $.ajax({
 		        	url: '/req_items',
-		        	data: a,
+		        	data: {id: a},
 		        	type: 'POST',
 		        	success: function(res) {
 		        		console.log(res)

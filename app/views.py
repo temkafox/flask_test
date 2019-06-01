@@ -14,8 +14,8 @@ def data():
 	return render_template('index.html', db=results)
 
 @app.route('/req_items', methods=['POST'])
-def items():
-	print(request)
+def req_items():
+	print(request.args.get)
 #@app.route('/index')
 #def main():
 #	a=data()
