@@ -3,15 +3,14 @@ from app import langs
 from flask import render_template
 
 
-@app.route('/index')
-def data():
-	sql1='select * from lang'
-	cursor.execute(sql1)
-	data=cursor.fetchall()
-	print(data)
-	conn.close()
-
 @app.route('/')
+def data():
+	cursor = db.cursor()
+    sql = "SELECT * FROM lang"
+    cursor.execute(sql)
+    results = cursor.fetchall()
+
+@app.route('/index')
 def main():
 	data()
     return render_template('index.html')
