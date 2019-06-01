@@ -8,10 +8,9 @@
 	<script>
 		$(document).ready(function () {
 		    console.log('document ready');
-
 		    $('#selector').change(function () {
-		        console.log('aaaaaaaaaaaaaaa');
-		        $('#selector').hide();
+		        a = $('#selector:selected').val();
+		        console.log(a);
 		    });
 		}); 
 	</script>
