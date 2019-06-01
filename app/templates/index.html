@@ -6,6 +6,10 @@
 </head>
 <body>
 	<script>
+		function add_elements(res){
+			list.removeChild(li);
+		}
+
 		$(document).ready(function () {
 		    console.log('document ready');
 		    $('#selector').change(function () {
@@ -15,11 +19,11 @@
 		        	url: '/req_items/' + a,
 		        	type: 'GET',
 		        	success: function(res) {
-		        		console.log(res)
+		        		add_elements(res);
 		        	}
 		        })
 		    });
-		}); 
+		});
 	</script>
 	<select id="selector">
 		<option disabled selected value>Выберите язык</option>
@@ -27,5 +31,8 @@
 		<option data-item-id="{{ item[0] }}">{{ item[1] }}</option>
 		{% endfor %}
 	</select>
+	<div id="list">
+		<ul>Значение не выбрано</ul>
+	</div>
 </body>
 </html>
