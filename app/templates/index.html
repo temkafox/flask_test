@@ -12,9 +12,8 @@
 		        a = $('#selector option:selected').data("item-id");
 		        console.log(a);
 		        $.ajax({
-		        	url: '/req_items',
-		        	data: "id: a",
-		        	type: 'POST',
+		        	url: '/req_items/' + a,
+		        	type: 'GET',
 		        	success: function(res) {
 		        		console.log(res)
 		        	}

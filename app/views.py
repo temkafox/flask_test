@@ -13,11 +13,10 @@ def data():
 	#print(results)
 	return render_template('index.html', db=results)
 
-@app.route('/req_items', methods=['POST'])
-def req_items():
-	a = request.args.get(id)
-	print(a)
-	return 'test'
+@app.route('/req_items/<url>', methods=['GET'])
+def req_items(url):
+	print(url)
+	return url
 #@app.route('/index')
 #def main():
 #	a=data()
