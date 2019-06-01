@@ -4,10 +4,9 @@
 	<title>Flask Server</title>
 </head>
 <body>
-	<p>db: {{db[1]}}</p>
 	<select>
 		{% for item in db %}
-		<option>{{ item[1] }}</option>
+		<option data-item-id="{{ item[0] }}">{{ item[1] }}</option>
 		{% endfor %}
 	</select>
 </body>
