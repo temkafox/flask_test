@@ -3,6 +3,47 @@
 <head>
 	<title>Flask Server</title>
 	<script src="http://code.jquery.com/jquery-3.4.1.js"></script>
+	<style type="text/css">
+		#selector {
+			width: 200px;
+		}
+		.select-button {
+			width: 120px;
+			height: 30px;
+			background-color: #cccccc;
+			border-radius: 20px;
+			outline: none;
+			font-size: 15px;
+		}
+		.lang-list {
+			display: none;
+		}
+
+		#list-ul {
+		}
+		#list-ul > li {
+		}
+		#list-ul > li > ul {
+		    display: none;
+		}
+		.list-ul > li {
+			width: 100px;
+			margin-top: 10px;
+			padding: 4px;
+			border-radius: 10px;
+			list-style-type: none;
+			border: 1px solid black;
+		}
+		.children-list > li {
+			border-radius: 10px;
+			padding: 4px;
+			list-style-type: none;
+			margin-left: -40px;
+		}
+		.children-list > li:nth-last-child(2n+1) {
+			background-color: white;
+		}
+	</style>
 </head>
 <body>
 	<script>
@@ -30,6 +71,37 @@
   				console.log(item[1]);
   			});
 		}
+		$(function() {
+			$('.select-button').click(function (event) {
+				$('.lang-list').stop().fadeToggle();
+			});
+		});
+
+		$(document).ready(function () {
+		    $('#list-ul > li').click(function (event) {
+		    	b = $(this).data("item-ul-id");
+		    	$.ajax({
+		        	url: '/req_items/' + b,
+		        	type: 'GET',
+		        	success: function(res) {
+		        		add_elements_ul(res, b);
+		        	}
+		        })
+		        $(this).children("ul").slideToggle();
+		        event.stopPropagation();
+		    });
+		});
+		function add_elements_ul(res, b){
+			console.log(b);
+			var list = document.getElementById('children-list-' + b);
+			list.innerHTML = '';
+  			res.forEach(function(item){
+  				var newLi = document.createElement('li');
+  				list.appendChild(newLi);
+  				newLi.innerHTML = item[1];
+  			});
+		}
+
 	</script>
 	<select id="selector">
 		<option disabled selected value>Выберите язык</option>
@@ -40,5 +112,22 @@
 	<ul id="list">
 		<li>Значение не выбрано</li>
 	</ul>
+
+	<button class="select-button" id="select-button">Select</button>
+	<ul class="lang-list">
+		{% for item in db %}
+		<li data-item-id="{{ item[0] }}">{{ item[1] }}</li>
+		{% endfor %}
+	</ul>
+
+	<ul class="list-ul" id="list-ul">
+		{% for item in db %}
+	    <li data-item-ul-id="{{ item[0] }}">{{ item[1] }}
+	        <ul class="children-list" id="children-list-{{item[0]}}" data-item-id="{{ item[0] }}">
+	        	<li></li>
+	        </ul>
+	    </li>
+	    {% endfor %}
+	</ul>	
 </body>
 </html>
