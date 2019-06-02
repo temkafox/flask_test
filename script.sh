@@ -1,9 +1,12 @@
 #!/bin/bash
 /etc/init.d/mysql restart
-mysql -uroot <<MY_QUERY
-CREATE DATABASE langs;
-USE langs;
-MY_QUERY
+
+mysql -uroot -e "CREATE DATABASE langs; USE langs;"
+
+#mysql -uroot <<MY_QUERY
+#CREATE DATABASE langs;
+#USE langs;
+#MY_QUERY
 mysql langs -uroot < /flask_test/db
 mysql -uroot <<USER_ROOT
 CREATE USER 'root1'@'localhost' IDENTIFIED BY '';
