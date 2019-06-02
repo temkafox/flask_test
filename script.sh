@@ -7,7 +7,7 @@ mysql -uroot -e "CREATE DATABASE langs; USE langs;"
 #CREATE DATABASE langs;
 #USE langs;
 #MY_QUERY
-mysql langs -uroot < /flask_test/db
+#mysql langs -uroot < /flask_test/db
 mysql -uroot <<USER_ROOT
 CREATE USER 'root1'@'localhost' IDENTIFIED BY '';
 GRANT ALL PRIVILEGES ON *.* TO 'root1'@'localhost';
