@@ -16,3 +16,4 @@ GRANT ALL PRIVILEGES ON *.* TO 'root1'@'localhost';
 UPDATE user SET plugin='auth_socket' WHERE User='root1';
 FLUSH PRIVILEGES;
 USER_ROOT
+/etc/init.d/mysql restart
