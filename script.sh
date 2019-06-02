@@ -1,6 +1,6 @@
 #!/bin/bash
 /etc/init.d/mysql restart
-mysql -uroot -e "CREATE DATABASE langs; USE langs;" < /flask_test/db
+mysql -uroot -e "CREATE DATABASE langs; USE langs;" langs < /flask_test/db
 
 #mysql -uroot -e "CREATE DATABASE langs; USE langs;"
 
